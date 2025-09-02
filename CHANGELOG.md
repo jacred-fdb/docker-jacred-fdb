@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.0.1...v1.0.2) (2025-09-02)
+
+### CI/CD
+
+* **deps:** bump actions/attest-build-provenance from 2.4.0 to 3.0.0 ([#3](https://github.com/pavelpikta/docker-jacred-fdb/issues/3)) ([66bf890](https://github.com/pavelpikta/docker-jacred-fdb/commit/66bf890ad71c2f5359ce108e28d104285f797263))
+* **deps:** bump cycjimmy/semantic-release-action from 4.2.2 to 5.0.0 ([#4](https://github.com/pavelpikta/docker-jacred-fdb/issues/4)) ([36d215f](https://github.com/pavelpikta/docker-jacred-fdb/commit/36d215fae9347f6220bbf15310a7a56b30108561))
+
 ## [1.0.1](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.0.0...v1.0.1) (2025-08-16)
 
 ### CI/CD
