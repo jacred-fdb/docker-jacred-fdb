@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.3](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.0.2...v1.0.3) (2025-09-02)
+
+### CI/CD
+
+* **deps:** bump sematic release version from `24.2.5` to `24.2.7` ([1c766de](https://github.com/pavelpikta/docker-jacred-fdb/commit/1c766de792b194f26054df94c62e4b4e80fe9878))
+
+### Other
+
+* **ci:** remove unused step to setup git config ([88249ab](https://github.com/pavelpikta/docker-jacred-fdb/commit/88249ab53a85258957864682364bd79ebd64d1ea))
+
 ## [1.0.2](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.0.1...v1.0.2) (2025-09-02)
 
 ### CI/CD
