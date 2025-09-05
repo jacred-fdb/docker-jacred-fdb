@@ -17,15 +17,16 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: read
-  contents: write
-  packages: write
-  id-token: write
-  attestations: write
-  security-events: write
+  contents: read
 
 jobs:
   ci-image:
+    permissions:
+      actions: read
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
     uses: ./.github/workflows/reusable-docker-build.yml
     with:
       registry: ${{ vars.REGISTRY }}

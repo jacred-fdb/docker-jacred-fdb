@@ -17,15 +17,12 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  actions: read
-  contents: write
-  packages: write
-  id-token: write
-  attestations: write
-  security-events: write
+  contents: read
 
 jobs:
   release:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     outputs:
       released: ${{ steps.release.outputs.new_release_published }}

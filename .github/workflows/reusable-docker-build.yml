@@ -107,11 +107,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: read
-      attestations: write
-      contents: write
-      id-token: write
+      contents: read
       packages: write
-      security-events: write
+      id-token: write
+      attestations: write
     env:
       IMAGE: ${{ inputs.registry }}/${{ github.repository_owner }}/${{ inputs.image }}
     outputs:

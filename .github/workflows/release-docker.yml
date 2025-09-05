@@ -31,6 +31,12 @@ jobs:
           echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
 
   build:
+    permissions:
+      actions: read
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
     needs: extract-version
     uses: ./.github/workflows/reusable-docker-build.yml
     with:
