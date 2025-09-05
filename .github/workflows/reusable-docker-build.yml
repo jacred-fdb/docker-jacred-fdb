@@ -85,6 +85,10 @@ on:
         type: number
         required: false
         default: 14
+    secrets:
+      DOCKERHUB_TOKEN:
+        description: "Docker Hub access token/password for pushes to docker.io (optional)"
+        required: true
     outputs:
       tags:
         description: "Resolved image tags from docker/metadata-action"
@@ -128,7 +132,7 @@ jobs:
         with:
           registry: ${{ vars.DOCKERHUB_REGISTRY }}
           username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PAT }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - uses: docker/setup-qemu-action@v3.6.0
       - uses: docker/setup-buildx-action@v3.11.1

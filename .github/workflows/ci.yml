@@ -38,3 +38,5 @@ jobs:
       generate_syft_sbom: true
       sbom_artifact_retention_days: 14
       extra_raw_tags: ${{ startsWith(github.ref, 'refs/heads/develop') && 'type=raw,value=develop' || '' }}
+    secrets:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
