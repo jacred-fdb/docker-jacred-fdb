@@ -2,10 +2,19 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - 'main'
   workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        description: 'Dry-run mode'
+        required: true
+        default: true
+  schedule:
+    - cron: "0 0 * * 0"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   actions: read
@@ -35,6 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
         with:
           semantic_version: 24.2.7
+          dry_run: ${{ inputs.dry_run || !github.event_name == 'schedule' }}
           extra_plugins: |
             @semantic-release/commit-analyzer
             @semantic-release/release-notes-generator
