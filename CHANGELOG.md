@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.0.3...v1.1.0) (2025-09-05)
+
+### Features
+
+* **ci:** add semantic-release dry run and schedule trigger event support ([3152c51](https://github.com/pavelpikta/docker-jacred-fdb/commit/3152c51ac1f5ca05771f3f0eec98e75cc44f679d))
+* **ci:** apply least-privilege permissions to workflows ([e2d09b4](https://github.com/pavelpikta/docker-jacred-fdb/commit/e2d09b474add9c4cb038957ead43603ca1cc70af))
+* **ci:** split docker build into separate release published workflow ([ec2c58e](https://github.com/pavelpikta/docker-jacred-fdb/commit/ec2c58ee834e8772deb5a59b217e8033dfb2f0ca))
+
 ## [1.0.3](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.0.2...v1.0.3) (2025-09-02)
 
 ### CI/CD
