@@ -29,7 +29,6 @@ jobs:
       attestations: write
     uses: ./.github/workflows/reusable-docker-build.yml
     with:
-      registry: ${{ vars.REGISTRY }}
       image: ${{ vars.IMAGE_NAME }}
       push: ${{ github.repository_owner == 'pavelpikta' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/feature/') || startsWith(github.ref, 'refs/heads/develop')) }}
       attest_github: ${{ github.repository_owner == 'pavelpikta' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/feature/') || startsWith(github.ref, 'refs/heads/develop')) }}

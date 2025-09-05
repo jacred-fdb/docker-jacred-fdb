@@ -40,7 +40,6 @@ jobs:
     needs: extract-version
     uses: ./.github/workflows/reusable-docker-build.yml
     with:
-      registry: ${{ vars.REGISTRY }}
       image: ${{ vars.IMAGE_NAME }}
       version: ${{ needs.extract-version.outputs.version }}
       push: ${{ github.repository_owner == 'pavelpikta' }}
@@ -49,3 +48,5 @@ jobs:
       provenance: "mode=max"
       generate_syft_sbom: true
       sbom_artifact_retention_days: 30
+    secrets:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
