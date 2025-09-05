@@ -1,5 +1,5 @@
 ---
-name: CI Branch Non-Release Image
+name: CI
 
 on:
   push:
