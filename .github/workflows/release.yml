@@ -52,18 +52,3 @@ jobs:
             @semantic-release/git
             @semantic-release/github
             conventional-changelog-conventionalcommits
-
-  build:
-    needs: release
-    if: needs.release.outputs.released == 'true'
-    uses: ./.github/workflows/reusable-docker-build.yml
-    with:
-      registry: ${{ vars.REGISTRY }}
-      image: ${{ vars.IMAGE_NAME }}
-      version: ${{ needs.release.outputs.version }}
-      push: ${{ github.repository_owner == 'pavelpikta' }}
-      attest_github: ${{ github.repository_owner == 'pavelpikta' }}
-      sbom: true
-      provenance: "mode=max"
-      generate_syft_sbom: true
-      sbom_artifact_retention_days: 30

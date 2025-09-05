@@ -1,0 +1,45 @@
+---
+name: Release Docker
+
+on:
+  release:
+    types: [published]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  extract-version:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: extract-version
+    uses: ./.github/workflows/reusable-docker-build.yml
+    with:
+      registry: ${{ vars.REGISTRY }}
+      image: ${{ vars.IMAGE_NAME }}
+      version: ${{ needs.extract-version.outputs.version }}
+      push: ${{ github.repository_owner == 'pavelpikta' }}
+      attest_github: ${{ github.repository_owner == 'pavelpikta' }}
+      sbom: true
+      provenance: "mode=max"
+      generate_syft_sbom: true
+      sbom_artifact_retention_days: 30
