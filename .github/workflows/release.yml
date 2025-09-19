@@ -40,7 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
         with:
-          semantic_version: 24.2.7
+          semantic_version: 24.2.8
           dry_run: ${{ inputs.dry_run || !github.event_name == 'schedule' }}
           extra_plugins: |
             @semantic-release/commit-analyzer
