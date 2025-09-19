@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.2.1...v1.3.0) (2025-09-19)
+
+### Features
+
+* update `JACRED_VERSION` and `DOTNET_VERSION` ARG ([#7](https://github.com/pavelpikta/docker-jacred-fdb/issues/7)) ([fb5894d](https://github.com/pavelpikta/docker-jacred-fdb/commit/fb5894d68ed7d170a92a4f8f082ff8933cd4b6c5))
+
 ## [1.2.1](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.2.0...v1.2.1) (2025-09-16)
 
 ### CI/CD
