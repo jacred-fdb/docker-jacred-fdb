@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.3.0...v1.4.0) (2025-09-28)
+
+### Features
+
+* update Jacred version SHA ([c9e51f9](https://github.com/pavelpikta/docker-jacred-fdb/commit/c9e51f9573d3c21f27fa987e0063f0cf496bc7ee))
+
 ## [1.3.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.2.1...v1.3.0) (2025-09-19)
 
 ### Features
