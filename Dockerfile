@@ -1,5 +1,5 @@
 ARG ALPINE_VERSION=3.22.1
-ARG JACRED_VERSION=1f6f88e5fe6a77c844643c86e1a48789d9f036d4
+ARG JACRED_VERSION=dd15c374d2af0a462a156d6d8f2d25802285bbd9
 ARG DOTNET_VERSION=9.0
 
 ################################################################################
@@ -54,20 +54,19 @@ RUN git init . \
 RUN --mount=type=cache,target=/home/builduser/.nuget/packages,uid=10001,gid=10001,sharing=locked \
     set -eu; \
     case "${TARGETARCH}" in \
-    amd64) RID=musl-x64 ;; \
-    arm)   RID=musl-arm ;; \
-    arm64) RID=musl-arm64 ;; \
+    amd64) RID=linux-musl-x64 ;; \
+    arm)   RID=linux-musl-arm ;; \
+    arm64) RID=linux-musl-arm64 ;; \
     *) echo "Unsupported architecture: ${TARGETARCH}" >&2; exit 1 ;; \
     esac; \
     dotnet restore --verbosity minimal || { echo "dotnet restore failed" >&2; exit 1; }; \
     dotnet publish . \
-    --os linux \
-    -a "$RID" \
+    --runtime "$RID" \
     --configuration Release \
     --self-contained true \
     --output /dist \
     --verbosity minimal \
-    -p:PublishTrimmed=true \
+    -p:PublishTrimmed=false \
     -p:PublishSingleFile=true \
     -p:DebugType=None \
     -p:EnableCompressionInSingleFile=true \
@@ -109,7 +108,8 @@ RUN set -eux; \
     /usr/share/locale/* \
     && addgroup -g 1000 -S jacred \
     && adduser -u 1000 -S jacred -G jacred -s /sbin/nologin -h /app \
-    && mkdir -p /app/Data /app/config \
+    && mkdir -p /app/Data /app/Data/fdb /app/Data/temp /app/Data/tracks /app/config \
+    && touch /app/Data/temp/stats.json \
     && chown -R jacred:jacred /app \
     && chmod -R 750 /app
 
