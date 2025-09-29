@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.7.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.6.0...v1.7.0) (2025-09-29)
+
+### Features
+
+* add ffprobe binary required  by TracksDB ([6c322b2](https://github.com/pavelpikta/docker-jacred-fdb/commit/6c322b2bf954c5b34099d05b0aa959672f97ec99))
+
 ## [1.6.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.5.0...v1.6.0) (2025-09-29)
 
 ### Features
