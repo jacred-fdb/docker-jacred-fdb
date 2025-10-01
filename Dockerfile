@@ -82,6 +82,8 @@ RUN --mount=type=cache,target=/home/builduser/.nuget/packages,uid=10001,gid=1000
 ################################################################################
 FROM --platform=$BUILDPLATFORM mwader/static-ffmpeg:8.0 AS static-ffmpeg
 
+ARG BUILDPLATFORM
+
 ################################################################################
 # Runtime stage - unchanged
 ################################################################################
