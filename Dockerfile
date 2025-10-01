@@ -80,10 +80,24 @@ RUN --mount=type=cache,target=/home/builduser/.nuget/packages,uid=10001,gid=1000
 ##################### ###########################################################
 # Static ffmpeg / ffbrobe
 ################################################################################
-FROM --platform=$BUILDPLATFORM mwader/static-ffmpeg:8.0 AS static-ffmpeg
+FROM alpine:${ALPINE_VERSION} AS static-ffprobe
 
-ARG TARGETARCH
 ARG BUILDPLATFORM
+ENV FFPB_URL_LINUX_AMD64="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz"
+ENV FFPB_URL_LINUX_ARM64="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz"
+
+RUN apk add --no-cache ca-certificates curl tar xz && \
+    case "$BUILDPLATFORM" in \
+    linux/amd64) URL=$FFPB_URL_LINUX_AMD64 ;; \
+    linux/arm64) URL=$FFPB_URL_LINUX_ARM64 ;; \
+    *) echo "Unsupported build platform $BUILDPLATFORM" >&2; exit 1 ;; \
+    esac && \
+    curl -L -o /tmp/ffprobe.tar.xz $URL && \
+    mkdir /ffprobe-extract && \
+    tar -xJf /tmp/ffprobe.tar.xz -C /ffprobe-extract && \
+    mv $(find /ffprobe-extract -name ffprobe) /usr/bin/ffprobe && \
+    chmod +x /usr/bin/ffprobe && \
+    rm -rf /tmp/ffprobe.tar.xz /ffprobe-extract
 
 ################################################################################
 # Runtime stage - unchanged
@@ -126,7 +140,7 @@ WORKDIR /app
 
 # Copy application, ffprobe,init configuration, entrypoint
 COPY --from=build --chown=jacred:jacred --chmod=550 /dist/ /app/
-COPY --from=static-ffmpeg --chmod=755 /ffprobe /usr/bin/
+COPY --from=static-ffprobe --chmod=755 /usr/bin/ffprobe /usr/bin/ffprobe
 COPY --chown=jacred:jacred --chmod=640 init.conf /app/init.conf
 COPY --chown=jacred:jacred --chmod=550 entrypoint.sh /entrypoint.sh
 
