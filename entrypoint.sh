@@ -27,6 +27,11 @@ if [ ! -x /app/JacRed ]; then
     exit 1
 fi
 
+# Start crond in background as jacred user with logging
+echo "Starting cron daemon..."
+crond -b -l 8 -L /app/Data/cron.log -u jacred
+
+# Start JacRed
 echo "Starting Jacred (version: ${JACRED_VERSION:-unknown}) on $(date)"
 echo "Architecture: $(uname -m)"
 echo "User: $(id)"

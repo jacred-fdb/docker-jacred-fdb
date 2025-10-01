@@ -95,6 +95,7 @@ RUN set -eux; \
     apk add --no-cache --update \
     ca-certificates \
     curl \
+    cronie \
     dumb-init \
     ffmpeg \
     icu-libs \
@@ -120,6 +121,7 @@ WORKDIR /app
 # Copy application, ffprobe,init configuration, entrypoint
 COPY --from=build --chown=jacred:jacred --chmod=550 /dist/ /app/
 COPY --chown=jacred:jacred --chmod=640 init.conf /app/init.conf
+COPY --chown=jacred:jacred crontab.conf /etc/crontabs/root
 COPY --chown=jacred:jacred --chmod=550 entrypoint.sh /entrypoint.sh
 
 # Environment variables
