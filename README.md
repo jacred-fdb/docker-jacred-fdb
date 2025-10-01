@@ -8,6 +8,8 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 [![License](https://img.shields.io/github/license/pavelpikta/docker-jacred-fdb?color=blue)](https://github.com/pavelpikta/docker-jacred-fdb/blob/main/LICENSE)
 
+[![DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pavelpikta/docker-jacred-fdb)
+
 A Docker image for [Jacred](https://github.com/immisterio/jacred-fdb) - a torrent tracker aggregator that provides a unified API for multiple torrent trackers. This containerized implementation offers enhanced security, multi-architecture support, and automated CI/CD workflows.
 
 ## 🚀 Features
@@ -17,7 +19,7 @@ A Docker image for [Jacred](https://github.com/immisterio/jacred-fdb) - a torren
 - **Robust Operations**: Health checks, graceful shutdown, signal handling
 - **Automated CI/CD**: Semantic versioning with automated releases
 - **SBOM & Attestations**: Supply chain security with SLSA attestations
-- **Optimized Build**: Self-contained .NET 8 binary with AOT compilation
+- **Optimized Build**: Self-contained .NET 9 binary with AOT compilation
 - **Configuration Management**: Persistent configuration with volume mounts
 
 ## 📋 Quick Start
@@ -133,14 +135,15 @@ The container automatically creates an initial configuration file (`init.conf`) 
 |----------|---------|-------------|
 | `ALPINE_VERSION` | `3.22.1` | Base Alpine Linux version |
 | `JACRED_VERSION` | `93c1b7b1...` | Jacred source commit SHA |
-| `DOTNET_VERSION` | `8.0` | .NET runtime version |
+| `DOTNET_VERSION` | `9.0` | .NET runtime version |
 
 ### Multi-Stage Build
 
 The Docker image uses a multi-stage build process:
 
-1. **Builder Stage**: Compiles Jacred from source using .NET 8 SDK
-2. **Runtime Stage**: Minimal Alpine Linux with only required dependencies
+1. **Builder Stage**: Compiles Jacred from source using .NET 9 SDK
+2. **Static ffmpeg/ffprobe Stage**: Provides statically compiled ffmpeg and ffprobe for media processing
+3. **Runtime Stage**: Minimal Alpine Linux with only required dependencies
 
 ### Optimization Features
 
