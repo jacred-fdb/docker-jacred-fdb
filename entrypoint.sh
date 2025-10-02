@@ -27,6 +27,7 @@ if [ ! -x /app/JacRed ]; then
     exit 1
 fi
 
+# Start JacRed
 echo "Starting Jacred (version: ${JACRED_VERSION:-unknown}) on $(date)"
 echo "Architecture: $(uname -m)"
 echo "User: $(id)"

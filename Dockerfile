@@ -3,7 +3,7 @@ ARG JACRED_VERSION=dd15c374d2af0a462a156d6d8f2d25802285bbd9
 ARG DOTNET_VERSION=9.0
 
 ################################################################################
-# Builder stage - Fixed directory permission issues
+# Builder stage
 ################################################################################
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}-alpine AS build
 
@@ -76,14 +76,6 @@ RUN --mount=type=cache,target=/home/builduser/.nuget/packages,uid=10001,gid=1000
     -p:IlcFoldIdenticalMethodBodies=true \
     || { echo "dotnet publish failed" >&2; exit 1; }
 
-
-##################### ###########################################################
-# Static ffmpeg / ffbrobe
-################################################################################
-FROM --platform=$BUILDPLATFORM mwader/static-ffmpeg:8.0 AS static-ffmpeg
-
-ARG BUILDPLATFORM
-
 ################################################################################
 # Runtime stage - unchanged
 ################################################################################
@@ -102,12 +94,14 @@ LABEL maintainer="Pavel Pikta <devops@pavelpikta.com>" \
 RUN set -eux; \
     apk add --no-cache --update \
     ca-certificates \
-    libstdc++ \
+    curl \
+    dumb-init \
+    ffmpeg \
+    icu-libs \
     libgcc \
     libintl \
-    icu-libs \
+    libstdc++ \
     tzdata \
-    dumb-init \
     && apk upgrade --no-cache \
     && rm -rf /var/cache/apk/* /tmp/* /var/tmp/* \
     && rm -rf /usr/share/man/* \
@@ -125,7 +119,6 @@ WORKDIR /app
 
 # Copy application, ffprobe,init configuration, entrypoint
 COPY --from=build --chown=jacred:jacred --chmod=550 /dist/ /app/
-COPY --from=static-ffmpeg --chmod=755 /ffprobe /usr/bin/
 COPY --chown=jacred:jacred --chmod=640 init.conf /app/init.conf
 COPY --chown=jacred:jacred --chmod=550 entrypoint.sh /entrypoint.sh
 
