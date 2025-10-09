@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.7.3](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.7.2...v1.7.3) (2025-10-09)
+
+### CI/CD
+
+* **dockerfile:** update `ALPINE_VERSION` to `3.22.2` ([57b0d19](https://github.com/pavelpikta/docker-jacred-fdb/commit/57b0d19f3a186e68468d5a38087dcc9aa4f1ae04))
+
+### Other
+
+* add `.gitignore`, `.dockerignore` ([1a8275f](https://github.com/pavelpikta/docker-jacred-fdb/commit/1a8275f9cb8a2f20b95b64bebddd32b5f35a3e36))
+
 ## [1.7.2](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.7.1...v1.7.2) (2025-10-02)
 
 ### Bug Fixes
