@@ -1,5 +1,7 @@
 # Docker Jacred-FDB
 
+> Available languages: [English](README.md) | [Russian](README.ru.md)
+
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pavelpikta/docker-jacred-fdb?sort=semver&logo=github)](https://github.com/pavelpikta/docker-jacred-fdb/releases/latest)
 [![Release Workflow](https://img.shields.io/github/actions/workflow/status/pavelpikta/docker-jacred-fdb/release.yml?branch=main&label=Release%20Workflow&logo=github)](https://github.com/pavelpikta/docker-jacred-fdb/actions/workflows/release.yml)
 [![GitHub Container Registry](https://img.shields.io/badge/ghcr.io-docker--jacred--fdb-blue?logo=github)](https://ghcr.io/pavelpikta/jacred-fdb)
@@ -137,14 +139,29 @@ The container automatically creates an initial configuration file (`init.conf`) 
 }
 ```
 
+### Configuration Lifecycle
+
+- First start copies the bundled `/app/init.conf` into the persisted `/app/config/init.conf` volume.
+- Subsequent starts keep your changes by syncing `/app/config/init.conf` back to `/app/init.conf` before Jacred launches.
+- Edit the file in the mounted volume, then restart the container to apply configuration updates.
+
+### Data Layout
+
+| Path | Contents |
+|------|----------|
+| `/app/Data/fdb` | Jacred database files |
+| `/app/Data/temp` | Temporary files such as `stats.json` |
+| `/app/Data/tracks` | Tracker cache and intermediate data |
+| `/app/config/init.conf` | Persisted runtime configuration |
+
 ## 🏗️ Build Information
 
 ### Build Arguments
 
 | Argument | Default | Description |
 |----------|---------|-------------|
-| `ALPINE_VERSION` | `3.22.1` | Base Alpine Linux version |
-| `JACRED_VERSION` | `93c1b7b1...` | Jacred source commit SHA |
+| `ALPINE_VERSION` | `3.22.2` | Base Alpine Linux version |
+| `JACRED_VERSION` | `dd15c374...` | Jacred source commit SHA |
 | `DOTNET_VERSION` | `9.0` | .NET runtime version |
 
 ### Multi-Stage Build
@@ -271,6 +288,26 @@ docker run --rm -it \
   ghcr.io/pavelpikta/jacred-fdb:latest \
   /bin/sh
 ```
+
+## 🔄 Updates
+
+- Pull the latest image: `docker pull ghcr.io/pavelpikta/jacred-fdb:latest`
+- Recreate the container so the new image starts while reusing existing volumes.
+- Confirm the version by reviewing the startup banner in `docker logs jacred`.
+
+## 💾 Backup & Restore
+
+- Backup configuration:
+
+  ```bash
+  docker run --rm \
+    -v jacred-config:/app/config \
+    -v "$(pwd)":/backup \
+    alpine tar czf /backup/jacred-config.tar.gz -C /app config
+  ```
+
+- Backup data by swapping the volume for `-v jacred-data:/app/Data` and adjusting the archive name.
+- Restore by extracting the archives into the respective named volumes before starting the container.
 
 ## 🤝 Contributing
 
