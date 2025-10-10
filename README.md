@@ -119,11 +119,21 @@ The container automatically creates an initial configuration file (`init.conf`) 
   "log": true,
   "syncapi": "http://redapi.cfhttp.top",
   "synctrackers": ["rutracker", "rutor", "kinozal", "nnmclub", "megapeer", "bitru", "toloka", "lostfilm", "baibako", "torrentby", "selezen"],
+  "disable_trackers": ["hdrezka", "anifilm", "anilibria"],
+  "syncsport": false,
+  "syncspidr": true,
   "maxreadfile": 200,
-  "tracks": true,
+  "tracks": false,
   "tracksdelay": 20000,
-  "timeStatsUpdate": 60,
-  "timeSync": 60
+  "tsuri": ["http://127.0.0.1:8090"],
+  "timeStatsUpdate": 30,
+  "timeSync": 60,
+  "evercache": {
+    "enable": false,
+    "validHour": 1,
+    "maxOpenWriteTask": 200,
+    "dropCacheTake": 200
+  }
 }
 ```
 
