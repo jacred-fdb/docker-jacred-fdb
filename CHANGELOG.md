@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.6](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.5...v1.8.6) (2025-10-31)
+
+### CI/CD
+
+* **deps:** bump actions/upload-artifact from 4.6.2 to 5.0.0 ([#18](https://github.com/pavelpikta/docker-jacred-fdb/issues/18)) ([7f35e3d](https://github.com/pavelpikta/docker-jacred-fdb/commit/7f35e3d6dd5b30db2f9fc94209ce92327e8017f8))
+
 ## [1.8.5](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.4...v1.8.5) (2025-10-25)
 
 ### CI/CD
