@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.8](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.7...v1.8.8) (2025-11-06)
+
+### CI/CD
+
+* **deps:** bump docker/setup-qemu-action from 3.6.0 to 3.7.0 ([#20](https://github.com/pavelpikta/docker-jacred-fdb/issues/20)) ([ca31b63](https://github.com/pavelpikta/docker-jacred-fdb/commit/ca31b63af3e79c3dc8a6a905402a73e889ab8556))
+
 ## [1.8.7](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.6...v1.8.7) (2025-11-05)
 
 ### CI/CD
