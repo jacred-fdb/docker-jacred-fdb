@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.9](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.8...v1.8.9) (2025-11-17)
+
+### CI/CD
+
+* **deps:** bump actions/checkout from 5.0.0 to 5.0.1 ([#22](https://github.com/pavelpikta/docker-jacred-fdb/issues/22)) ([199dce0](https://github.com/pavelpikta/docker-jacred-fdb/commit/199dce07e67901bb43c6f7ce3c78a82de7489fd8))
+* **deps:** bump cycjimmy/semantic-release-action from 5.0.2 to 6.0.0 ([#21](https://github.com/pavelpikta/docker-jacred-fdb/issues/21)) ([b6e762e](https://github.com/pavelpikta/docker-jacred-fdb/commit/b6e762e3f02d8da983f82d1ca436881beb3152ef))
+
 ## [1.8.8](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.7...v1.8.8) (2025-11-06)
 
 ### CI/CD
