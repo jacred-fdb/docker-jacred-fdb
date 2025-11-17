@@ -29,7 +29,7 @@ jobs:
       version: ${{ steps.release.outputs.new_release_version }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v5.0.1
         with:
           fetch-depth: 0
           token: ${{ secrets.SEMANTIC_RELEASE_PAT }}
