@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.11](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.10...v1.8.11) (2025-11-21)
+
+### CI/CD
+
+* **deps:** bump actions/checkout from 5.0.1 to 6.0.0 ([#24](https://github.com/pavelpikta/docker-jacred-fdb/issues/24)) ([d58c4b2](https://github.com/pavelpikta/docker-jacred-fdb/commit/d58c4b235b0eea0fc551aef9136f56c11367218f))
+
 ## [1.8.10](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.8.9...v1.8.10) (2025-11-18)
 
 ### CI/CD
