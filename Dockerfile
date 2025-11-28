@@ -1,5 +1,5 @@
 ARG ALPINE_VERSION=3.22.2
-ARG JACRED_VERSION=6c4e067cf6f8c72819a7e01211ee492323b40c60
+ARG JACRED_VERSION=fe18238968a4af259e750f46eeba466322ad03e0
 ARG DOTNET_VERSION=9.0
 
 ################################################################################
