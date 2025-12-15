@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.11.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.10.0...v1.11.0) (2025-12-15)
+
+### CI/CD
+
+* **deps:** bump actions/upload-artifact from 5.0.0 to 6.0.0 ([#28](https://github.com/pavelpikta/docker-jacred-fdb/issues/28)) ([2b8f928](https://github.com/pavelpikta/docker-jacred-fdb/commit/2b8f9280cc7f89d5183b70c8423b28bbdf498f66))
+* **deps:** bump anchore/sbom-action from 0.20.10 to 0.20.11 ([#27](https://github.com/pavelpikta/docker-jacred-fdb/issues/27)) ([46ee5df](https://github.com/pavelpikta/docker-jacred-fdb/commit/46ee5dfccb65a93032ac0f84cfbbd3a3c1d56ea4))
+
+### Features
+
+* update `JACRED_VERSION` to `96c1cff` ([d45c7bf](https://github.com/pavelpikta/docker-jacred-fdb/commit/d45c7bf4c9390fb074613c373efd2f5ada16d561))
+
 ## [1.10.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.9.0...v1.10.0) (2025-12-03)
 
 ### CI/CD
