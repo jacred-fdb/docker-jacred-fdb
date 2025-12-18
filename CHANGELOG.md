@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.12.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.11.0...v1.12.0) (2025-12-18)
+
+### Features
+
+* update `ALPINE_VERSION` to `3.23.2` ([308316d](https://github.com/pavelpikta/docker-jacred-fdb/commit/308316dbe4c65ab88d422eee6a6ae7683a0fb3b5))
+
 ## [1.11.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.10.0...v1.11.0) (2025-12-15)
 
 ### CI/CD
