@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.12.1](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.12.0...v1.12.1) (2025-12-19)
+
+### CI/CD
+
+* **deps:** bump actions/attest-build-provenance from 3.0.0 to 3.1.0 ([#29](https://github.com/pavelpikta/docker-jacred-fdb/issues/29)) ([902e933](https://github.com/pavelpikta/docker-jacred-fdb/commit/902e933840e6cf95a1661c43828d38b2ff31b979))
+
 ## [1.12.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.11.0...v1.12.0) (2025-12-18)
 
 ### Features
