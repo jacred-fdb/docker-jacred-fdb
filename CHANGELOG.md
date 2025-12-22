@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.12.2](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.12.1...v1.12.2) (2025-12-22)
+
+### CI/CD
+
+* **deps:** bump docker/setup-buildx-action from 3.11.1 to 3.12.0 ([#30](https://github.com/pavelpikta/docker-jacred-fdb/issues/30)) ([27d5e02](https://github.com/pavelpikta/docker-jacred-fdb/commit/27d5e0275c6508cb0422c1df2d161a5159ea01bc))
+
 ## [1.12.1](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.12.0...v1.12.1) (2025-12-19)
 
 ### CI/CD
