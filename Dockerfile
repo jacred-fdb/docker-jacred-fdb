@@ -1,6 +1,6 @@
 ARG ALPINE_VERSION=3.23.2
 ARG JACRED_VERSION=96c1cff46792d921302d59b2f01c6e70d2654c22
-ARG DOTNET_VERSION=9.0
+ARG DOTNET_VERSION=10.0
 
 ################################################################################
 # Builder stage
