@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.14.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.13.1...v1.14.0) (2026-01-20)
+
+### Features
+
+* update `synctrackers` and `disable_trackers` ([3dfaf9c](https://github.com/pavelpikta/docker-jacred-fdb/commit/3dfaf9c22b04177d913448041851a39d1d2d839d))
+
 ## [1.13.1](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.13.0...v1.13.1) (2026-01-16)
 
 ### CI/CD
