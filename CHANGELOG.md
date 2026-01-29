@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.15.1](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.15.0...v1.15.1) (2026-01-29)
+
+### CI/CD
+
+* **deps:** bump docker/login-action from 3.6.0 to 3.7.0 ([#38](https://github.com/pavelpikta/docker-jacred-fdb/issues/38)) ([6e1ea11](https://github.com/pavelpikta/docker-jacred-fdb/commit/6e1ea1128bd97217a5cfe92b6749eb5f3390c6b1))
+
 ## [1.15.0](https://github.com/pavelpikta/docker-jacred-fdb/compare/v1.14.1...v1.15.0) (2026-01-28)
 
 ### CI/CD
