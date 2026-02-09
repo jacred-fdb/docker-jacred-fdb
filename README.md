@@ -1,5 +1,8 @@
 # Docker Jacred-FDB
 
+>[!IMPORTANT]
+> This is deprecated docker image for JacRed. Please use this [Docker image for JacRed](https://github.com/jacred-fdb/jacred/pkgs/container/jacred)
+
 > Available languages: [English](README.md) | [Russian](README.ru.md)
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pavelpikta/docker-jacred-fdb?sort=semver&logo=github)](https://github.com/pavelpikta/docker-jacred-fdb/releases/latest)
